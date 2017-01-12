@@ -1,6 +1,4 @@
 import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
 
 /**
  * Created by ScorpionOrange on 2017/01/11.
@@ -12,16 +10,12 @@ public class TXTCommander {
 
     public boolean createFile(String filePath, String fileName) throws Exception{
         boolean flag = false;
-        File file = new File(filePath + fileName);
+        File file = new File(filePath + "\\" + fileName);
         try{
             if(!file.exists()){
                 file.createNewFile();
                 flag = true;
             }
-            FileWriter fileWriter = new FileWriter(file);
-            PrintWriter printWriter = new PrintWriter(fileWriter);
-            printWriter.flush();
-            printWriter.close();
         }
         catch (Exception e){
             e.printStackTrace();
